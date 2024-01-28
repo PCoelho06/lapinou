@@ -1,17 +1,118 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}{% endblock %}
+			- Lapinou.tech
+		</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css"/> {% block stylesheets %}{% endblock %}
 
-        {% block javascripts %}
-{% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
-</html>
+		{##### FAVICON #####}
+
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon/apple-touch-icon.png') }}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon/favicon-32x32.png') }}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon/favicon-16x16.png') }}">
+		<link rel="manifest" href="{{ asset('img/favicon/site.webmanifest') }}">
+
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+			<div class="container px-md-5">
+				<a class="navbar-brand fw-bold" href="{{ path('app_home') }}">
+					<img src="{{ asset('img/logo-lapinou.png') }}" class="rounded" alt="Logo de Lapinou.tech">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="lni lni-menu"></i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+						<li class="nav-item">
+							<a class="nav-link me-lg-3" href="#features">Blog</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link me-lg-3" href="#features">Services</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link me-lg-3" href="#download">Portfolio</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link me-lg-3" href="#download">À propos</a>
+						</li>
+					</ul>
+					<button class="btn btn-lg btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+						<span class="d-flex justify-content-between align-items-center">
+							<i class="lni lni-envelope me-2"></i>Me contacter
+						</span>
+					</button>
+				</div>
+			</div>
+		</nav>
+		<main class="mt-5"> {% block body %}{% endblock %}
+			</main>
+			<footer class="px-5 ">
+				<div class="row">
+					<div class="col-lg text-center">
+						<h2>
+							<a href="{{ path('app_home') }}">Lapinou.tech</a>
+						</h2>
+						<p class="meta">
+							<a href="{{ path('app_terms') }}">Mentions légales</a>
+							<a href="{{ path('app_privacy') }}">Politique de confidentialité</a>
+							<a href="{{ path('app_accessibility') }}">Politique d'accessibilité</a>
+						</p>
+						<p class="meta">
+							<a href="https://lapinou.tech/sitemap.xml">Plan du site</a>
+						</p>
+					</div>
+					<div class="col">
+						<nav>
+							<ul>
+								<li class="nav-item">
+									<a class="nav-link me-lg-3" href="#features">Accueil</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link me-lg-3" href="#features">Blog</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link me-lg-3" href="#features">Services</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link me-lg-3" href="#download">Portfolio</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link me-lg-3" href="#download">À propos</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="col">
+						<h3>Newsletter</h3>
+						<p>Inscrivez-vous à la newsletter pour ne rien louper de toutes les actualités de Lapinou.tech</p>
+						<input type="email" class="form-control" name="email-newsletter" id="email-newsletter">
+						<button type="submit" class="btn btn-primary rounded-pill">
+							<span class="d-flex justify-content-between align-items-center">
+								<i class="lni lni-circle-plus me-2"></i>S'inscrire
+							</span>
+						</button>
+					</div>
+				</div>
+				<div class="row text-center">
+					<p class="text-center">
+						Made with
+						<i class="lni lni-heart-fill"></i>
+						and a lot of
+						<i class="lni lni-coffee-cup"></i>
+					</p>
+				</div>
+			</footer>
+		</body>
+	</html>

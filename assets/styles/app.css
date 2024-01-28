@@ -1,0 +1,54 @@
+:root {
+    /* --colour-bg-primary: linear-gradient(90deg, #004AAD, #CB6CE6); */
+    --colour-bg-primary: #333333;
+    --colour-primary: #1F2A44;
+    --colour-accent-primary: #FF5252;
+    --colour-accent-secondary: #4CAF50;
+    --background: #060608;
+    --color: #FAFAFA;
+}
+
+body {
+    background-color: var(--background);
+}
+
+#site-title {
+    font-family: 'Playfair Display', serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.btn-primary {
+    background: var(--colour-bg-primary);
+    border: none;
+}
+
+.meta {
+    font-size: 0.5rem;
+}
+
+.navbar-toggler {
+    border: 2px solid #000;
+}
+
+.name-display {
+    color: var(--color);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 5rem;
+    letter-spacing: -0.5rem;
+    animation: glitch 2s ease infinite 2s alternate-reverse;
+}
+
+input[type='email'] {
+    box-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    background-color: var(--colour-bg-primary);
+    border-top: 1px solid red;
+    border-right: 1px solid red;
+    border-bottom: 1px solid blue;
+    border-left: 1px solid blue;
+}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Accueil
+{% endblock %}
+
+{% block body %}
+	<div class="presentation-left">
+		<div class="greetings">
+			<p class="text-center display-3">Hey
+				<span class="hand-icon">👋🏼</span>
+			</p>
+			<p class="text-center display-3 delay">moi c'est</p>
+		</div>
+		<div class="name delay">
+			<h1 class="name-display">Pierre Coelho</h1>
+		</div>
+		<div class="function delay2">
+			<h2 class="function-display">Developpeur web full-stack</h2>
+		</div>
+		<div class="text-center my-2 delay3">
+			<a class="btn btn-lg btn-primary" href="#me-contacter">
+				<i class="fa-regular fa-envelope"></i>
+				me contacter</a>
+		</div>
+	</div>
+	<div class="presentation-right">
+		<img src="assets/img/homepage-illustration.png" alt="Illustration de la page d'accueil" id="homepage-illustration">
+	</div>
+{% endblock %}
